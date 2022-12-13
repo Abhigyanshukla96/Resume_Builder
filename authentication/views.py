@@ -12,7 +12,7 @@ def auth(request):
     return render(request, "auth.html")
 
 @csrf_exempt
-def login(request):
+def signin(request):
     try:
         if request.method == "POST":
             data = json.loads(request.body.decode('utf-8'))
@@ -37,9 +37,9 @@ def signup(request):
             data = json.loads(request.body.decode('utf-8'))
             username = data.get('username')
             password = data.get('password')
-            
+            email = data.get('email')
             try:
-                user = User.objects.create_user(username, password)
+                user = User.objects.create_user(username=username, password=password, email=email)
             except:
                 return JsonResponse({'status':'failed', 'message':'Username/password already exists. Please try signing up with different username/password.', 'error':True}, status=403)
             
