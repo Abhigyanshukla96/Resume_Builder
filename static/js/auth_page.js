@@ -61,7 +61,7 @@ signinSaveBtn.addEventListener('click', (e) => {
 	.then(res => {
 		if(!res.error){
 			console.log(res);
-			container.classList.remove("right-panel-active");		
+			window.location.href = '/cv';
 		}
 	})
 });
