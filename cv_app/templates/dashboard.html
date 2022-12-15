@@ -48,7 +48,7 @@
 
  </div>
 
- <a class="button" href="create-resume"> Create/Edit Resume</a>
+ <a class="button" href="create-resume" > Create/Edit Resume</a>
 
  <div class="line-break">
 
@@ -60,16 +60,21 @@
 
  </div>
 
- <a class="button" style="background-color:red;" href="login"> Logout </a>
+ <a class="button" style="background-color:red;" id="logout"> Logout </a>
 
  </form>
 
  <!-- partial -->
 
  <script src="{% static 'js/cv.js' %}">
-
  </script>
-
+<script>
+    document.getElementById("logout").addEventListener("click",(e)=>
+  {
+    e.preventDefault();
+    window.location.href="/account/logout";
+  })
+</script>
  </body>
 
 </html>

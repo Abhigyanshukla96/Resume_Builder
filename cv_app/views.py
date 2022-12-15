@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import UserDetails
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
 
 # Create your views here.
 def dashboard(request):
