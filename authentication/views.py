@@ -53,4 +53,4 @@ def signup(request):
     
 def logout(request):
     djangologout(request)
-    return redirect("auth_page")
+    return redirect("home")
