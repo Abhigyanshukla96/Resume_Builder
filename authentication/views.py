@@ -1,11 +1,12 @@
 import json
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as django_login
+from django.contrib.auth import logout as djangologout
 
 # Create your views here.
 def auth(request):
@@ -49,3 +50,7 @@ def signup(request):
         print("Error occured while signing up: ",e)
         return JsonResponse({'status':'failed', 'message':'Something weird happened. Please try again after sometime', 'error':True}, status=500)
         
+    
+def logout(request):
+    djangologout(request)
+    return redirect("home")

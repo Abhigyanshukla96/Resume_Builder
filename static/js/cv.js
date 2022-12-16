@@ -196,3 +196,5 @@ const getState = () => {
   document.getElementById('name').addEventListener('blur', checkName)
   
   document.getElementById('email').addEventListener('blur', checkEmail)
+
+  
